@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="./src/output.css" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+</head>
+<body class="bg-nuetral-navy-950 flex items-center justify-center min-h-screen p-4 font-rubik">
+  <!-- Container -->
+  <div class="flex flex-col max-w-sm rounded-2xl lg:max-w-5xl lg:flex-row gap-6">
+    <!-- Header -->
+    <div class="bg-nuetral-navy-900 rounded-2xl w-full lg:w-1/4">
+
+      <div class="bg-primary-purple-600 rounded-2xl p-6 flex lg:flex-col">
+        <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="rounded-full w-16 h-16 mr-6 border-2 border-white">
+        <div class="lg:mt-8 lg:mb-15">
+          <h1 class="text-nuetral-navy-200 lg:text-sm">Report for</h1>
+          <p class="text-white text-2xl lg:text-4xl font-light">Jeremy Robson</p>
+        </div>
+      </div>
+
+      <div class="flex lg:flex-col justify-around gap-2 p-6">
+        <button id="daily-btn" class="text-nuetral-purple-500 text-left cursor-pointer hover:text-white">Daily</button>
+        <button id="weekly-btn" class="text-white text-left cursor-pointer hover:text-white">Weekly</button>
+        <button id="monthly-btn" class="text-nuetral-purple-500 text-left cursor-pointer hover:text-white">Monthly</button>
+      </div>
+
+    </div>
+    <!-- End Header -->
+
+    <!-- Activity Cards -->
+    <div class="grid grid-cols-1 gap-6 w-full lg:grid-cols-3">
+      <!-- Work -->
+    <div class="relative overflow-hidden rounded-2xl">
+      <div class="bg-primary-orange-300-work rounded-b-3xl">
+        <img src="./images/icon-work.svg" alt="Work icon" class="ml-55 lg:ml-40 -mt-2.5 lg:-mt-3 -mb-7">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Work</h2>
+            <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:text-5xl lg:mb-2">5hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 7hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl lg:text-5xl text-white lg:mb-2">32hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 36hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:text-5xl lg:mb-2">103hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 128hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Work -->
+
+    <!-- Play -->
+    <div class="relative overflow-hidden rounded-2xl">
+      <div class="bg-primary-blue-300-play rounded-b-3xl">
+        <img src="./images/icon-play.svg" alt="Play icon" class="ml-55 lg:ml-40 lg:-mt-3 -mt-2.5 -mb-7">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Play</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">1hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 2hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">10hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 8hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">23hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 29hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Play -->
+
+    <!-- Study -->
+    <div class="relative overflow-hidden rounded-2xl">
+      <div class="bg-primary-pink-400-study rounded-b-3xl">
+        <img src="./images/icon-study.svg" alt="Study icon" class="ml-55 -mt-2.5 lg:ml-40 lg:-mt-3 -mb-7">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Study</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">0hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 1hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">4hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 7hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">13hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 19hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Study -->
+
+    <!-- Exercise -->
+    <div class="relative overflow-hidden rounded-2xl">
+      <div class="bg-primary-green-400-exercise rounded-b-xl lg:rounded-b-xs">
+        <img src="./images/icon-exercise.svg" alt="Exercise icon" class="ml-55 -mt-0.5 lg:ml-40 lg:-mt-0 -mb-4 lg:-mb-2">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Exercise</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">1hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 1hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">4hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 5hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">11hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 18hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Exercise -->
+
+    <!-- Social -->
+    <div class="relative overflow-hidden rounded-2xl">
+      <div class="bg-primary-purple-700-social rounded-b-4xl">
+        <img src="./images/icon-social.svg" alt="Social icon" class="ml-58 -mt-2.5 lg:ml-42 lg:-mt-4 -mb-10">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-2xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Social</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">1hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 3hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">5hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 10hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">21hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 23hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Social -->
+
+    <!-- Self Care -->
+    <div class="relative overflow-hidden rounded-2xl h-full">
+      <div class="bg-primary-yellow-300-selfcare rounded-b-xl lg:rounded-b-xs">
+        <img src="./images/icon-self-care.svg" alt="Self Care icon" class="ml-58 -mt-2.5 lg:ml-43 lg:-mt-3 -mb-5 lg:-mb-3">
+      </div>
+      <!-- Floating content that overlaps the image -->
+      <div class="bg-nuetral-navy-900 hover:bg-nuetral-purple-500 hover:cursor-pointer p-6 rounded-2xl relative">
+        <div class="flex justify-between items-center lg:mb-4">
+          <h2 class="text-white text-2xl lg:text-lg">Self Care</h2>
+          <img src="./images/icon-ellipsis.svg" alt="More options">
+        </div>
+        
+        <div>
+          <!-- Daily -->
+          <div class="time-data hidden" data-timeframe="daily">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">0hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 1hrs</p>
+          </div>
+
+          <!-- Weekly (visible initially) -->
+          <div class="time-data flex lg:flex-col lg:items-start justify-between items-center" data-timeframe="weekly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">2hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Last Week - 2hrs</p>
+          </div>
+
+          <!-- Monthly -->
+          <div class="time-data hidden" data-timeframe="monthly">
+            <p class="text-4xl text-white lg:mb-2 lg:text-5xl">7hrs</p>
+            <p class="text-nuetral-navy-200 lg:text-xs">Previous - 11hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Self Care -->
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </div>
+</body>
+</html>
